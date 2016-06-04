@@ -43,6 +43,10 @@ void testBackToFront (void) {
    node fourth;
    node fifth;
    node sixth;
+   
+   //new nodes
+   node seventh;
+   node eighth;
 
    first.value = FIRST;
    second.value = SECOND;
@@ -50,6 +54,9 @@ void testBackToFront (void) {
    fourth.value = FOURTH;
    fifth.value = FIFTH;
    sixth.value = SIXTH;
+   
+   seventh.value = 10;
+   eighth.value = 2;
 
    printf ("TEST 1: testing backToFront on an empty list...\n");
    inputList = NULL;
@@ -130,6 +137,8 @@ void testBackToFront (void) {
    printf ("   YES, node values have not been changed\n" );
 
    printf ("... TEST 4 passed!\n");
+
+//My tests
 
 
 
