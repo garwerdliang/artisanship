@@ -66,8 +66,7 @@ void makeAction (Game g, action a) {
       } else if (g->uni[C] != 0){
          g->mostARCs = UNI_C;
       } 
-   } else {
-      if(getARCs(g, getMostARCs(g)) < getARCs(g, UNI_A) ||
+   } else if(getARCs(g, getMostARCs(g)) < getARCs(g, UNI_A) ||
          getARCs(g, getMostARCs(g)) < getARCs(g, UNI_B) ||
          getARCs(g, getMostARCs(g)) < getARCs(g, UNI_C)){
          g->mostARCs = uni;
