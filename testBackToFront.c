@@ -56,7 +56,7 @@ void testBackToFront (void) {
    sixth.value = SIXTH;
    
    seventh.value = 10;
-   eighth.value = 2;
+   eighth.value = 999;
 
    printf ("TEST 1: testing backToFront on an empty list...\n");
    inputList = NULL;
@@ -139,8 +139,66 @@ void testBackToFront (void) {
    printf ("... TEST 4 passed!\n");
 
 //My tests
+   inputList = &first;
+   first.next = &second;
+   second.next = &third;
+   third.next = &fourth;
+   fourth.next = &fifth;
+   fifth.next = &sixth;
+   sixth.next = &seventh;
+   seventh.next = NULL;
+   
+   assert (outputList  == &seventh);
+   assert (seventh.next  == &first);
+   assert (first.next  == &second);
+   assert (second.next == &third);
+   assert (third.next  == &fourth);
+   assert (fourth.next == &fifth);
+   assert (fifth.next  == &sixth);
+   assert (sixth.next == NULL);
 
-
-
-
+   printf ("    YES, links are correct\n");
+   
+   assert(first.value  == FIRST);
+   assert(second.value == SECOND);
+   assert(third.value  == THIRD);
+   assert(fourth.value == FOURTH);
+   assert(fifth.value  == FIFTH);
+   assert(sixth.value  == SIXTH);
+   assert(seventh.value == 10);
+   
+   printf (    "YES, value are unchanged\nOwn Test 1 PASSED\n");
+   
+   inputList = &first;
+   first.next = &second;
+   second.next = &third;
+   third.next = &fourth;
+   fourth.next = &fifth;
+   fifth.next = &sixth;
+   sixth.next = &seventh;
+   seventh.next = &eighth;
+   eighth.next - NULL;
+   
+   assert (outputList  == &eighth);
+   assert (eighth.next  == &first);
+   assert (first.next  == &second);
+   assert (second.next == &third);
+   assert (third.next  == &fourth);
+   assert (fourth.next == &fifth);
+   assert (fifth.next  == &sixth);
+   assert (sixth.next == &seventh);
+   assert (seventh.next == NULL);
+   
+   printf ("    Yes, all links are correct!")
+   
+   assert(first.value  == FIRST);
+   assert(second.value == SECOND);
+   assert(third.value  == THIRD);
+   assert(fourth.value == FOURTH);
+   assert(fifth.value  == FIFTH);
+   assert(sixth.value  == SIXTH);
+   assert(seventh.value == 10);
+   assert(eighth.value == 999);
+   
+   printf (    "YES, value are unchanged\nOwn Test 2 PASSED\n");
 }
