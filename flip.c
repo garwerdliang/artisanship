@@ -4,8 +4,6 @@
 
 #include "flip.h"
 
-// 1 2 X
-
 void flip (list l){
 	link prev = l->head;
 	link curr;
@@ -15,7 +13,7 @@ void flip (list l){
 	}else{
         curr = prev->next;
         l->head = curr;
-		while (prev!=NULL&&curr!=NULL){
+	while (prev!=NULL&&curr!=NULL){
            temp = curr->next;
            if (curr->next != NULL){
               if (curr->next->next == NULL){
